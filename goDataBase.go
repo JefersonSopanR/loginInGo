@@ -27,3 +27,12 @@ func goDataBase(f form, db *db) *user {
 	return nil
 }
 
+func (d *db) deleteUser(u *user) {
+	for i, uu := range d.users {
+		if uu == u {
+			d.users = append(d.users[:i], d.users[i+1:]...)
+			return
+		}
+	}
+}
+
