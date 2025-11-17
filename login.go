@@ -33,7 +33,6 @@ func login(r *bufio.Reader, db *db) {
 		return
 	} else {
 		fmt.Println("Invalid Username or Password")
-		login(r, db)
 		return
 	}
 }

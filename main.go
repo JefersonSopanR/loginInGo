@@ -17,5 +17,13 @@ func main() {
 	db := db{}
 	reader := bufio.NewReader(os.Stdin)
 
-	register(reader, &db)
+	input, _ := getInput("Enter the fileName: ", reader)
+	for input != "exit" {
+		if input == "register" {
+			register(reader, &db)
+		} else if input == "login" {
+			login(reader, &db)
+		}
+		input, _ = getInput("Enter the fileName: ", reader)
+	}
 }
